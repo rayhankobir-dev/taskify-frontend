@@ -3,7 +3,7 @@ import Login from "./pages/login";
 import Register from "./pages/register";
 import Layout from "./Layout";
 import Home from "./pages/home";
-import NotFound from "./components/notFound";
+import NotFound from "./components/NotFound";
 import PrivateRoute from "./components/PrivateRoute";
 import TasksPage from "./pages/tasks";
 

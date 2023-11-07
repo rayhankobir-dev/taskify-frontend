@@ -1,9 +1,9 @@
 import { Fragment, useEffect } from "react";
-import Logo from "../assets/logo.png";
-import Clock from "../assets/clock.webp";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import useAuth from "../hooks/useAuth";
+import Logo from "../assets/clock.png";
+import Clock from "../assets/clock.webp";
 
 export default function Login() {
   const { login, isAuthenticated } = useAuth();
@@ -59,7 +59,7 @@ export default function Login() {
                       required: true,
                     })}
                     id="email"
-                    value={"rayhan@gmail.com"}
+                    defaultValue={"raju@gmail.com"}
                     type="email"
                     placeholder="hh"
                     autoComplete="email"
@@ -88,7 +88,7 @@ export default function Login() {
                       required: true,
                     })}
                     id="password"
-                    value={"Abn123.2"}
+                    defaultValue={"Rayhan.123"}
                     type="password"
                     placeholder="******"
                     className="block w-full rounded-md border-0 p-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"

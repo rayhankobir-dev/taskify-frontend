@@ -67,7 +67,7 @@ function TasksPage() {
     }
     return tasks;
   };
-  console.log("Hello");
+
   return (
     <main>
       <section className="mt-4 bg-gray-50 p-4 rounded-t-md border border-gray-100">

@@ -12,7 +12,7 @@ export default function Task({ task }) {
 
   async function onSave(task) {
     const toastId = toast.loading("Updating...");
-    const response = await fetch("http://localhost:8000/api/tasks/", {
+    const response = await fetch("https://taskify-api.vercel.app/api/tasks/", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export default function Task({ task }) {
   async function deleteTask() {
     const toastId = toast.loading("Deleting...");
 
-    const response = await fetch("http://localhost:8000/api/tasks/", {
+    const response = await fetch("https://taskify-api.vercel.app/api/tasks/", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

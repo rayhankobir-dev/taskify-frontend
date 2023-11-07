@@ -1,9 +1,8 @@
-import { NavLink } from "react-router-dom";
 import { useContext, useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../context/AuthContext";
 import { BsFillPersonFill } from "react-icons/bs";
-
-import Logo from "../assets/logo 2.png";
+import Logo from "../assets/clock.png";
 
 export default function Header() {
   const { logout, getProfile } = useContext(AuthContext);
@@ -15,7 +14,7 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto flex justify-between ">
         <ul className="flex items-center gap-4 font-semibold">
           <div className="flex items-center gap-1 mr-4">
-            <img className="h-10" src={Logo} alt="logo" />
+            <img className="h-8 rounded-full" src={Logo} alt="logo" />
           </div>
           <li>
             <NavLink
@@ -49,15 +48,23 @@ export default function Header() {
           {openDropDown ? (
             <div
               onMouseLeave={() => setOpenDropDown(false)}
-              className="w-48  absolute top-10 right-0 overflow-hidden bg-white shadow-lg flex flex-col rounded-md"
+              className="w-48 border  absolute top-10 right-0 z-[100] overflow-hidden bg-white shadow-lg flex flex-col rounded-md"
             >
-              <h2 className="py-2 bg-gray-100 px-1 text-center">{user.name}</h2>
-              <button
-                onClick={logout}
-                className="text-rose-500 py-2 hover:bg-rose-100"
-              >
-                Logout
-              </button>
+              <div className="flex flex-col px-3 py-1 bg-gray-50">
+                <h2 className="font-semibold">{user.name}</h2>
+                <p className="font-light">{user.email}</p>
+              </div>
+              <div className="flex flex-col divide-y border-t">
+                <Link to={"/profile"} className="py-1.5 px-3 hover:bg-gray-50">
+                  Profile
+                </Link>
+                <button
+                  onClick={logout}
+                  className="py-1.5 px-3 text-left text-rose-500 hover:text-rose-600 hover:bg-gray-50"
+                >
+                  Logout
+                </button>
+              </div>
             </div>
           ) : (
             ""
